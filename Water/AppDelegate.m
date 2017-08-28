@@ -56,7 +56,9 @@
 
 
 - (void)showPopover:(id)sender{
-
+    if (_button != NULL){
+        [_popover showRelativeToRect:_button.bounds ofView:_button preferredEdge:NSRectEdgeMinY];
+    }
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
