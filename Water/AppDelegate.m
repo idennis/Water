@@ -45,20 +45,25 @@
 
 
 - (void)togglePopover:(id)sender{
-//    if (_popover .isShown){
-//        [closePopover sender];
-//    }
-//    else {
-//        [showPopover sender];
-//    }
+    if (_popover .isShown){
+        [self closePopover:sender];
+    }
+    else {
+        [self showPopover:sender];
+    }
     
 }
 
 
 - (void)showPopover:(id)sender{
-    if (_button != NULL){
+    if (_button == NULL){
+        NSLog(@"oi");
         [_popover showRelativeToRect:_button.bounds ofView:_button preferredEdge:NSRectEdgeMinY];
     }
+}
+
+- (void)closePopover:(id)sender{
+    [_popover performClose:sender];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
