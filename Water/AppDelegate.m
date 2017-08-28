@@ -11,72 +11,40 @@
 
 @interface AppDelegate ()
 
+@property (strong, nonatomic) NSStatusItem * statusItem;
+@property (strong, nonatomic) WaterViewController * waterView;
+
 @end
+
+
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
     NSStatusBar *bar = [NSStatusBar systemStatusBar];
+    self.statusItem = [bar statusItemWithLength:NSSquareStatusItemLength];
     
-    _statusItem = [bar statusItemWithLength:NSSquareStatusItemLength];
+    NSStatusBarButton * button = self.statusItem.button;
     
-    NSStatusBarButton * button = _statusItem.button;
-    
-    if (button != NULL){
-        [button setEnabled:YES];
-        [_statusItem setHighlightMode:YES];
-        [button setTarget:self];
-        [button setImage:[NSImage imageNamed:@"StatusBarButtonImage"]];
-        [button setAction:@selector(togglePopover:)];
-        
-    };
-    
-    _popover.contentViewController = [[[WaterViewController alloc] init ]freshController];
-    
-//    [self constructMenu];
-}
 
-- (void)printQuote:(id)sender{
-    _quoteText = @"teeststs";
-    _quoteAuthor = @"fake author";
-    NSLog(@"%@", _quoteText);
+    [button setEnabled:YES];
+    [self.statusItem setHighlightMode:YES];
+    [button setTarget:self];
+    [button setImage:[NSImage imageNamed:@"StatusBarButtonImage"]];
+    
+
+    
+    self.waterView = [[WaterViewController alloc] initWithNibName:@"WaterViewController" bundle:nil];
+    
+    [button setTarget:self.waterView];
+    [button setAction:@selector(togglePopover:)];
 }
 
 
-- (void)togglePopover:(id)sender{
-    if (_popover .isShown){
-        [self closePopover:sender];
-    }
-    else {
-        [self showPopover:sender];
-    }
-    
-}
-
-
-- (void)showPopover:(id)sender{
-    if (_button == NULL){
-        NSLog(@"oi");
-        [_popover showRelativeToRect:_button.bounds ofView:_button preferredEdge:NSRectEdgeMinY];
-    }
-}
-
-- (void)closePopover:(id)sender{
-    [_popover performClose:sender];
-}
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
-}
-
-- (void) constructMenu{
-    NSMenu *menu = [NSMenu alloc];
-    [menu addItemWithTitle:@"Print" action:@selector(printQuote:) keyEquivalent:@"P"];
-    [menu addItem:[NSMenuItem separatorItem]];
-    [menu addItemWithTitle:@"Quit" action:@selector(terminate:) keyEquivalent:@"q"];
-    
-    _statusItem.menu = menu;
 }
 
 

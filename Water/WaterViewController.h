@@ -10,6 +10,8 @@
 
 @interface WaterViewController : NSViewController
 
-- (NSViewController *) freshController;
+- (void)togglePopover:(id)sender;
+- (void)showPopover:(id)sender;
+- (void)closePopover;
 
 @end

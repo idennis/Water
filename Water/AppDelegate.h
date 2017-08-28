@@ -10,15 +10,9 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-@property (strong) NSStatusItem * statusItem;
-@property (strong) NSStatusBarButton * button;
-@property (strong) NSPopover *popover;
 
-@property NSString *quoteText;
-@property NSString *quoteAuthor;
+//@property (strong) NSStatusBarButton * button;
 
-- (void) printQuote:(id)sender;
-- (void) constructMenu;
 
 @end
 
