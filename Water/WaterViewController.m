@@ -14,6 +14,15 @@
 
 @implementation WaterViewController
 
+- (NSViewController *) freshController{
+    NSStoryboard * storyboard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
+    NSString * identifier = @"WaterViewController";
+    
+    NSViewController * viewcontroller = [storyboard instantiateControllerWithIdentifier:identifier];
+    
+    return viewcontroller;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

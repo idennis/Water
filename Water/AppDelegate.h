@@ -11,7 +11,7 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (strong) NSStatusItem * statusItem;
-
+@property (strong) NSPopover *popover;
 
 @property NSString *quoteText;
 @property NSString *quoteAuthor;

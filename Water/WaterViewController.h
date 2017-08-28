@@ -10,4 +10,6 @@
 
 @interface WaterViewController : NSViewController
 
+- (NSViewController *) freshController;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "WaterViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,24 +22,25 @@
     _statusItem = [bar statusItemWithLength:NSSquareStatusItemLength];
     
 
-    if (_statusItem != NULL){
+    if (_statusItem.button != NULL){
         [_statusItem setEnabled:YES];
         [_statusItem setHighlightMode:YES];
         [_statusItem setTarget:self];
         [_statusItem setImage:[NSImage imageNamed:@"StatusBarButtonImage"]];
-        [_statusItem setAction:@selector(printQuote:)];
+        [_statusItem setAction:@selector(togglePopover:)];
         
     };
     
-    [self constructMenu];
+    _popover.contentViewController = [[WaterViewController init ]freshController];
 }
 
 - (void)printQuote:(id)sender{
     _quoteText = @"teeststs";
     _quoteAuthor = @"fake author";
     NSLog(@"%@", _quoteText);
-//    print("(quoteText) - \(quoteAuthor)");
 }
+
+
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
@@ -52,5 +54,6 @@
     
     _statusItem.menu = menu;
 }
+
 
 @end
