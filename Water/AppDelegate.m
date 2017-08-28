@@ -21,17 +21,20 @@
     
     _statusItem = [bar statusItemWithLength:NSSquareStatusItemLength];
     
-
-    if (_statusItem.button != NULL){
-        [_statusItem setEnabled:YES];
+    NSStatusBarButton * button = _statusItem.button;
+    
+    if (button != NULL){
+        [button setEnabled:YES];
         [_statusItem setHighlightMode:YES];
-        [_statusItem setTarget:self];
-        [_statusItem setImage:[NSImage imageNamed:@"StatusBarButtonImage"]];
-        [_statusItem setAction:@selector(togglePopover:)];
+        [button setTarget:self];
+        [button setImage:[NSImage imageNamed:@"StatusBarButtonImage"]];
+        [button setAction:@selector(togglePopover:)];
         
     };
     
-    _popover.contentViewController = [[WaterViewController init ]freshController];
+    _popover.contentViewController = [[[WaterViewController alloc] init ]freshController];
+    
+//    [self constructMenu];
 }
 
 - (void)printQuote:(id)sender{
@@ -41,6 +44,20 @@
 }
 
 
+- (void)togglePopover:(id)sender{
+//    if (_popover .isShown){
+//        [closePopover sender];
+//    }
+//    else {
+//        [showPopover sender];
+//    }
+    
+}
+
+
+- (void)showPopover:(id)sender{
+
+}
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
