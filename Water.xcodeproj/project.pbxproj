@@ -14,6 +14,7 @@
 		BC4C62551F53AA8700C841BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC4C62531F53AA8700C841BA /* Main.storyboard */; };
 		BC4C62601F53AA8700C841BA /* WaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C625F1F53AA8700C841BA /* WaterTests.m */; };
 		BC4C626B1F53AA8800C841BA /* WaterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C626A1F53AA8800C841BA /* WaterUITests.m */; };
+		BC4C627A1F53DEC700C841BA /* WaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C62791F53DEC700C841BA /* WaterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		BC4C62661F53AA8800C841BA /* WaterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4C626A1F53AA8800C841BA /* WaterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaterUITests.m; sourceTree = "<group>"; };
 		BC4C626C1F53AA8800C841BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC4C62781F53DEC700C841BA /* WaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterViewController.h; sourceTree = "<group>"; };
+		BC4C62791F53DEC700C841BA /* WaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 			children = (
 				BC4C62481F53AA8700C841BA /* AppDelegate.h */,
 				BC4C62491F53AA8700C841BA /* AppDelegate.m */,
+				BC4C62781F53DEC700C841BA /* WaterViewController.h */,
+				BC4C62791F53DEC700C841BA /* WaterViewController.m */,
 				BC4C624E1F53AA8700C841BA /* ViewController.h */,
 				BC4C624F1F53AA8700C841BA /* ViewController.m */,
 				BC4C62511F53AA8700C841BA /* Assets.xcassets */,
@@ -274,6 +279,7 @@
 			files = (
 				BC4C62501F53AA8700C841BA /* ViewController.m in Sources */,
 				BC4C624D1F53AA8700C841BA /* main.m in Sources */,
+				BC4C627A1F53DEC700C841BA /* WaterViewController.m in Sources */,
 				BC4C624A1F53AA8700C841BA /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
